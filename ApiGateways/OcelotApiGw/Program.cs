@@ -23,6 +23,6 @@ namespace OcelotApiGw
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });        
+                });
     }
 }

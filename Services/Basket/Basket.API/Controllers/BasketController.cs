@@ -50,7 +50,7 @@ namespace Basket.API.Controllers
             return Ok(await _repository.UpdateBasket(basket));
         }
 
-        [HttpDelete("{userName}", Name = "DeleteBasket")]        
+        [HttpDelete("{userName}", Name = "DeleteBasket")]
         [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteBasket(string userName)
         {
@@ -64,7 +64,7 @@ namespace Basket.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Checkout([FromBody] BasketCheckout basketCheckout)
         {
-            // get existing basket with total price            
+            // get existing basket with total price hisstory
             // Set TotalPrice on basketCheckout eventMessage
             // send checkout event to rabbitmq
             // remove the basket

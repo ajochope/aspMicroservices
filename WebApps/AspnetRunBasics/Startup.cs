@@ -70,11 +70,11 @@ namespace AspnetRunBasics
             
             app.UseStaticFiles();
 
-            app.UseCors(builder => builder
-                            .AllowAnyMethod()
-                            .AllowAnyHeader()
-                            .SetIsOriginAllowed(origin => true) // allow any origin
-                            .AllowCredentials());
+            // app.UseCors(builder => builder
+            //                 .AllowAnyMethod()
+            //                 .AllowAnyHeader()
+            //                 .SetIsOriginAllowed(origin => true) // allow any origin
+            //                 .AllowCredentials());
 
             app.UseRouting();
 

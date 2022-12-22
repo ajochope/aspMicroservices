@@ -17,7 +17,7 @@ services:
     image: rabbitmq:3-management-alpine
 
   pgadmin:
-    image: dpage/pgadmin4  
+    image: dpage/pgadmin4
 
   portainer:
     image: portainer/portainer-ce

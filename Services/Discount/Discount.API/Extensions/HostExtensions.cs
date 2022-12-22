@@ -33,7 +33,7 @@ namespace Discount.API.Extensions
 
                     //if the postgresql server container is not created on run docker compose this
                     //migration can't fail for network related exception. The retry options for database operations
-                    //apply to transient exceptions                    
+                    //apply to transient exceptions
                     retry.Execute(() => ExecuteMigrations(configuration));
                     
                     logger.LogInformation("Migrated postresql database.");
@@ -57,13 +57,13 @@ namespace Discount.API.Extensions
                 Connection = connection
             };
 
-            command.CommandText = "DROP TABLE IF EXISTS Coupon";
+            command.CommandText = "DROP TABLE IF EXISTS  Coupon";
             command.ExecuteNonQuery();
 
             command.CommandText = @"CREATE TABLE Coupon(Id SERIAL PRIMARY KEY, 
-                                                                ProductName VARCHAR(24) NOT NULL,
-                                                                Description TEXT,
-                                                                Amount INT)";
+                                                            ProductName VARCHAR(24) NOT NULL,
+                                                            Description TEXT,
+                                                            Amount INT)";
             command.ExecuteNonQuery();
 
 
@@ -72,6 +72,6 @@ namespace Discount.API.Extensions
 
             command.CommandText = "INSERT INTO Coupon(ProductName, Description, Amount) VALUES('Samsung 10', 'Samsung Discount', 100);";
             command.ExecuteNonQuery();
-        }        
+        }
     }
 }

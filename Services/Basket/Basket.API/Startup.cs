@@ -45,7 +45,7 @@ namespace Basket.API
 
             // Grpc Configuration
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
-                        (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
+                (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
             services.AddScoped<DiscountGrpcService>();
 
             // MassTransit-RabbitMQ Configuration
@@ -64,7 +64,7 @@ namespace Basket.API
             });
 
             services.AddHealthChecks()
-                    .AddRedis(Configuration["CacheSettings:ConnectionString"], "Redis Health", HealthStatus.Degraded);                    
+                    .AddRedis(Configuration["CacheSettings:ConnectionString"], "Redis Health", HealthStatus.Degraded);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

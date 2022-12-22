@@ -33,7 +33,7 @@ namespace Discount.Grpc.Extensions
 
                     //if the postgresql server container is not created on run docker compose this
                     //migration can't fail for network related exception. The retry options for database operations
-                    //apply to transient exceptions                    
+                    //apply to transient exceptions
                     retry.Execute(() => ExecuteMigrations(configuration));
 
                     logger.LogInformation("Migrated postresql database.");
